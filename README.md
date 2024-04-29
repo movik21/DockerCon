@@ -37,8 +37,6 @@ It's worth noting that the color of the sky can vary depending on the time of da
 In summary, the sky appears blue because of Rayleigh scattering, which disperses blue light throughout the atmosphere, giving it a blue appearance.
 
 
- 
-
 ### Example Prompt to model [mistral](https://ollama.com/library/mistral)
 > Why is the sky blue?
 
@@ -49,7 +47,7 @@ is greater which results in more scattering of longer wavelengths like red and o
 colors.
 
 ## Use local Ollama UI
-Use additional docker container to enter your prompts and collect API responses to save your conversation in a text file inside the contaier.
+Use additional docker container to enter your prompts and collect API responses to save your conversation in a [text file](conversation_log.txt) inside the contaier.
 
 ```
 docker build -t api-client .
@@ -57,4 +55,24 @@ docker build -t api-client .
 Run the container in interactive mode.
 ```
 docker run --name local-ollama-UI -it --network="host" api-client
+```
+
+## Start services with docker compose 
+Use compose up or following command to build the two services:
+```
+docker compose -f "docker-compose.yml" up -d --build
+```
+Check status of both services:
+```
+docker ps
+```
+To start the prefered model use (only needed once per model, download can take some minutes)
+```
+docker exec -it ollama_com ollama run mistral
+```
+
+To use the simple UI over your terminal just attach the service back to it 
+Start with your first promt e.g. 'hello' and to end the conversation write 'exit': 
+```
+docker attach local-ollama-UI_com
 ```

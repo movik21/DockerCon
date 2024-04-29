@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    container_name: ollama_com
+
+
+  api-client:
+    build:
+      dockerfile: dockerfile
+    depends_on:
+      - ollama
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    restart: always
+    network_mode: "host"
+    container_name: local-ollama-UI_com
+
+volumes:
+  db_data:
+  ollama:

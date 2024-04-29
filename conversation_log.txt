@@ -1,0 +1,13 @@
+Prompt: Hello
+Response:  Hello! How may I help you today? If you have a specific question or topic in mind, feel free to ask and I'll do my best to provide a concise and accurate answer. If not, here's a fun fact: did you know that the first computer programmer was a woman named Ada Lovelace? She wrote the world's first algorithm intended to be processed by a machine in 1843! Is there anything else you'd like to know? Let me know if you have any questions.
+
+Prompt: Tell me one more joke
+Response:  Why don't scientists trust atoms?
+
+Because they make up everything!
+
+Prompt: Thank you!
+Response:  Of course, I will keep my responses concise. Let me know how I can help you.
+
+For example, if you ask "What is the capital city of France?", I would answer "Paris". Or if you ask "How many sides does a triangle have?", I would respond "Three sides". Let me know if you have any specific question.
+
