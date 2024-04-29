@@ -1,10 +1,31 @@
 # Docker Con
 Docker Container Übungen in SW 09 für Lernjournal im Modul DevOps
 
+## Automatic: Start services with docker compose 
+Use compose up or following command to build the two services:
+```
+docker compose -f "docker-compose.yml" up -d --build
+```
+Check status of both services:
+```
+docker ps
+```
+To start the prefered model use (only needed once per model, download can take some minutes)
+```
+docker exec -it ollama_com ollama run mistral
+```
+
+To use the simple UI over your terminal just attach the service back to it:
+```
+docker attach local-ollama-UI_com
+```
+Start with your first promt e.g. 'hello' and to end the conversation write 'exit'.
+
+In the following the same steps are described which can be done manually instead of using docker compose.
+
 
 ## Main steps to get started with Ollama:
 Follow instruction on: https://hub.docker.com/r/ollama/ollama
-
 
 ### Pull and run docker from Docker Hub 
 CPU only:
@@ -55,24 +76,4 @@ docker build -t api-client .
 Run the container in interactive mode.
 ```
 docker run --name local-ollama-UI -it --network="host" api-client
-```
-
-## Start services with docker compose 
-Use compose up or following command to build the two services:
-```
-docker compose -f "docker-compose.yml" up -d --build
-```
-Check status of both services:
-```
-docker ps
-```
-To start the prefered model use (only needed once per model, download can take some minutes)
-```
-docker exec -it ollama_com ollama run mistral
-```
-
-To use the simple UI over your terminal just attach the service back to it 
-Start with your first promt e.g. 'hello' and to end the conversation write 'exit': 
-```
-docker attach local-ollama-UI_com
 ```
