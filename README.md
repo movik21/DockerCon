@@ -1,7 +1,8 @@
 # Docker Con
 Docker Container Übungen in SW 09 für Lernjournal im Modul DevOps
 
-## Automatic: Start services with docker compose 
+
+## Start services with Docker Compose (Automatic)
 Use compose up or following command to build the two services:
 ```
 docker compose -f "docker-compose.yml" up -d --build
@@ -21,11 +22,10 @@ docker attach local-ollama-UI_com
 ```
 Start with your first promt e.g. 'hello' and to end the conversation write 'exit'.
 
+
+# Main steps executed by Docker Compose
 In the following the same steps are described which can be done manually instead of using docker compose.
-
-
-## Main steps to get started with Ollama:
-Follow instruction on: https://hub.docker.com/r/ollama/ollama
+To get started with Ollama follow instruction on: https://hub.docker.com/r/ollama/ollama
 
 ### Pull and run docker from Docker Hub 
 CPU only:
